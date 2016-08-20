@@ -51,12 +51,12 @@ class BaseParser(object):
         """
         # only decode byte strings into unicode if it hasn't already
         # been done by a subclass
-        if isinstance(text, unicode):
+        if isinstance(text, str):
             return text
 
         # empty text? nothing to decode
         if not text:
-            return u''
+            return ''
 
         # use chardet to automatically detect the encoding text
         max_confidence, max_encoding = 0.0, None

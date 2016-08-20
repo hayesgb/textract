@@ -60,6 +60,7 @@ class Parser(ShellParser):
             for page in sorted(os.listdir(temp_dir)):
                 page_path = os.path.join(temp_dir, page)
                 page_content = TesseractParser().extract(page_path, **kwargs)
+                page_content = page_content.decode()
                 contents.append(page_content)
             return ''.join(contents)
         finally:
